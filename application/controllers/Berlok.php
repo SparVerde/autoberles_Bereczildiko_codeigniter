@@ -73,7 +73,7 @@ class Berlok extends CI_Controller {
         
             $data = array();
             $get = $this->uri->uri_to_assoc();
-            //$id=$this->input->get('id');
+            $id=$this->input->get('id');
             //$id=3;
             $nev=$this->input->get('nev');
             echo $nev;
@@ -87,7 +87,7 @@ class Berlok extends CI_Controller {
                 //$data['nev']=$this->input->post('nev');
                 $nev=$this->input->post('nev');
                 echo'OK';
-                $this->berlok_model->berlo_rogzitese2($nev); 
+                $this->berlok_model->update_record2($nev,$id); 
                 //$this->berlok_model->update_record($nev); // nem működik
                 //$this->Berlok_model->update_record($nev); //model meghívása és update function meghívása
                 echo'OK';

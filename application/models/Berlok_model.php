@@ -34,18 +34,23 @@ class Berlok_model extends CI_Model {
         $this->db->insert('berlok', $data);
         return $this->db->insert_id();
     }
-    public function berlo_rogzitese2($nev)
+    public function update_record($nev)
     {
-        $this->db->update('berlok', 'nev',$nev); //nem jó a syntaxis!!!
-        //return $this->db->update_id();
+        //$this->db->update('berlok', 'nev', $nev, 'id', $id); //nem jó a syntaxis!!!
+        //$this->db->update('berlok', $nev,'id=3'); //UPDATE `berlok` SET `BereczI` = '' WHERE `id` = 3
+        //$this->db->update('berlok','nev=$nev','id=3'); //UPDATE `berlok` SET `nev=$nev` = '' WHERE `id` = 3
+        //$this->db->update('berlok','nev' ."$nev",'id=3'); //UPDATE `berlok` SET `nevBereczI` = '' WHERE `id` = 3
+        $this->db->update('berlok',$nev,'id=3');// nem megfelelő szintaszis
+        return $this->db->update_id();
     }
 
-    public function update_record()
+    public function update_record2($nev,$id)
     {
         //$query=$this->db->query("UPDATE berlok SET nev='$nev' where id='3'");
         //$query=$this->db->query("UPDATE `berlok` SET `nev`='$nev' where `id`='3'");
-        $this->db->where('id', 3 );
-		$this->db->update('nev', $nev);
+        $this->db->set('nev',$nev);
+        $this->db->where('id',$id);
+        $this->db->update('berlok');
     }
 
     
