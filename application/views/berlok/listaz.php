@@ -38,7 +38,7 @@
                         <td><?php echo $berlo['nev'] ?>
                         <!--<form method="POST" name="modosit">
                         <input type="text" name="nev" id="nev" placeholder="Név" required 
-                        value="<?php echo $berlo['nev'] ?>">
+                        value="<?php //echo $berlo['nev'] ?>">
                         <input type="submit" value="Módosít" var_dump($nev)>-->
                         </td>
                         <td><?php echo $berlo['jogositvany'] ?></td>
