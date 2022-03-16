@@ -29,7 +29,7 @@ class People extends REST_Controller {
                 $this->response(["A megadott azonosítóval nem található adat."], REST_Controller::HTTP_NOT_FOUND);
             } else {
                 $this->response($adatok, REST_Controller::HTTP_OK);
-                $this->load->view('people/listaz', $adatok);
+                
             }
         }
     }
